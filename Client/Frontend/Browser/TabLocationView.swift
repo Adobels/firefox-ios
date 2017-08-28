@@ -228,6 +228,10 @@ class TabLocationView: UIView {
         } else {
             urlTextField.text = url?.absoluteString
         }
+        if let scheme = url?.scheme {
+            let schemeString = "\(scheme)://"
+            urlTextField.text = url?.absoluteString.replacingOccurrences(of: schemeString, with: "")
+        }
     }
 }
 
